@@ -1,0 +1,28 @@
+#!/bin/sh
+
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# feat:	Nova funcionalidade
+# fix:	Correção de bug
+# chore:	Mudanças sem impacto no código (build, config)
+# docs:	Alterações na documentação
+# style:	Formatação de código (sem mudanças lógicas)
+# refactor:	Melhorias no código sem alterar funcionalidade
+# test:	Adição/alteração de testes
+
+
+if ! echo "$BRANCH_NAME" | grep -Eq '^(feat|fix|chore|docs|style|refactor|test)/[a-z0-9._-]+$'; then
+  echo "❌ Nome de branch inválido: '$BRANCH_NAME'"
+  echo "🔧 Use o padrão: tipo/nome-da-tarefa"
+  exit 1
+fi
+
+protected_branches="main master develop homolog"
+
+for branch in $protected_branches; do
+  if [ "$BRANCH_NAME" = "$branch" ]; then
+    echo "❌ Commits diretos na branch '$branch' não são permitidos."
+    exit 1
+  fi
+done
+
