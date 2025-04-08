@@ -1,0 +1,18 @@
+#!/bin/sh
+
+commit_msg=$(cat "$1")
+
+# feat:	Nova funcionalidade
+# fix:	Correção de bug
+# chore:	Mudanças sem impacto no código (build, config)
+# docs:	Alterações na documentação
+# style:	Formatação de código (sem mudanças lógicas)
+# refactor:	Melhorias no código sem alterar funcionalidade
+# test:	Adição/alteração de testes
+
+if ! echo "$commit_msg" | grep -Eq "^(feat|fix|chore|docs|style|refactor|test): .+"; then
+  echo "❌ Mensagem de commit inválida!"
+  echo "🔧 Use um dos prefixos permitidos: feat:, fix:, chore:, docs:, style:, refactor:, test:"
+  echo "💡 Exemplo: feat: adicionar botão de login"
+  exit 1
+fi
