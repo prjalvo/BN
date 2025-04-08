@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "rvest.vs-code-prettier-eslint",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "naumovs.color-highlight",
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "oderwat.indent-rainbow",
+    "PKief.material-icon-theme",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+    "mohsen1.prettify-json",
+    "natqe.reload",
+    "planbcoding.vscode-react-refactor",
+    "redhat.vscode-yaml",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "yoavbls.pretty-ts-errors",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag"
+  ]
+}
