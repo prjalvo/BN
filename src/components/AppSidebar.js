@@ -1,37 +1,38 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import CIcon from '@coreui/icons-react';
+import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
+import { AppSidebarNav } from './AppSidebarNav';
 
-import { AppSidebarNav } from './AppSidebarNav'
+import SimpleBar from 'simplebar-react';
 
-import { logoNegative } from 'src/assets/brand/logo-negative'
-import { sygnet } from 'src/assets/brand/sygnet'
-
-import SimpleBar from 'simplebar-react'
-import 'simplebar/dist/simplebar.min.css'
+import 'simplebar/dist/simplebar.min.css';
 
 // sidebar nav config
-import navigation from '../_nav'
+import navigation from '../_nav';
+
+import { sygnet } from './../assets/brand/sygnet';
 
 const AppSidebar = () => {
-  const dispatch = useDispatch()
-  const unfoldable = useSelector((state) => state.sidebarUnfoldable)
-  const sidebarShow = useSelector((state) => state.sidebarShow)
+  const dispatch = useDispatch();
+  const unfoldable = useSelector(state => state.sidebarUnfoldable);
+  const sidebarShow = useSelector(state => state.sidebarShow);
 
   return (
     <CSidebar
       position="fixed"
       unfoldable={unfoldable}
       visible={sidebarShow}
-      onVisibleChange={(visible) => {
-        dispatch({ type: 'set', sidebarShow: visible })
+      onVisibleChange={visible => {
+        dispatch({ type: 'set', sidebarShow: visible });
       }}
     >
-      <CSidebarBrand className="d-none d-md-flex" to="/"> <h4>SIMPLES</h4>
+      <CSidebarBrand className="d-none d-md-flex" to="/">
+        {' '}
+        <h4>SIMPLES</h4>
         {/* <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} /> */}
-        <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
+        <CIcon className="sidebar-brand-narrow" height={35} icon={sygnet} />
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
@@ -43,7 +44,7 @@ const AppSidebar = () => {
         onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
       />
     </CSidebar>
-  )
-}
+  );
+};
 
-export default React.memo(AppSidebar)
+export default React.memo(AppSidebar);

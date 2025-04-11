@@ -22,7 +22,6 @@
     "redhat.vscode-yaml",
     "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
-    "yoavbls.pretty-ts-errors",
     "formulahendry.auto-rename-tag",
     "formulahendry.auto-close-tag"
   ]
