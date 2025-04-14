@@ -56,7 +56,7 @@ module.exports = {
 
     // Regras React Hooks
     'react-hooks/rules-of-hooks': 'error', // Garante que hooks sejam usados corretamente
-    'react-hooks/exhaustive-deps': 'warn', // Garante que dependências dos hooks estejam completas
+    'react-hooks/exhaustive-deps': 'error', // Garante que dependências dos hooks estejam completas
 
     // Uso de console
     'no-console': ['warn', { allow: ['warn', 'error'] }], // Permite `console.warn` e `console.error`, mas alerta sobre outros
